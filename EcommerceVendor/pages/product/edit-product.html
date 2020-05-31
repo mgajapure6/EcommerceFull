@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Title-->
+    <title>Suha - Multipurpose Ecommerce Mobile Template</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../assets/img/core-img/favicon.ico">
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <!-- Preloader-->
+    <div class="preloader" id="preloader">
+        <div class="spinner-grow text-secondary" role="status">
+            <div class="sr-only">Loading...</div>
+        </div>
+    </div>
+    <!-- Header Area-->
+    <div class="header-area" id="headerArea">
+        <div class="container h-100 d-flex align-items-center justify-content-between">
+            <!-- Back Button-->
+            <div class="back-button"><a href="shop-grid.html"><i class="lni-arrow-left"></i></a></div>
+            <!-- Page Title-->
+            <div class="page-heading">
+                <h6 class="mb-0">Edit Product</h6>
+            </div>
+            <!-- Navbar Toggler-->
+            <div class="suha-navbar-toggler d-flex justify-content-between flex-wrap" id="suhaNavbarToggler"><span></span><span></span><span></span></div>
+        </div>
+    </div>
+    <!-- Sidenav Black Overlay-->
+    <div class="sidenav-black-overlay"></div>
+    <!-- Side Nav Wrapper-->
+    <div class="suha-sidenav-wrapper" id="sidenavWrapper">
+        <!-- Sidenav Profile-->
+        <div class="sidenav-profile">
+            <div class="user-profile"><img src="../../assets/img/bg-img/9.jpg" alt=""></div>
+            <div class="user-info">
+                <h6 class="user-name mb-0"></h6>
+            </div>
+        </div>
+        <!-- Sidenav Nav-->
+        <ul class="sidenav-nav">
+            <li><a href="../dashboard/dashboard.html"><i class="lni-home"></i>Dashboard</a></li>
+            <li><a href="../profile/profile.html"><i class="lni-user"></i>My Profile</a></li>
+            <li><a href="../notification/notifications.html"><i class="lni-alarm lni-tada-effect"></i>Notifications<span class="ml-3 badge badge-warning">3</span></a></li>
+            <li><a href="../orders/my-order.html"><i class="lni-empty-file"></i>My Orders</a></li>
+            <li><a href="../settings/settings.html"><i class="lni-cog"></i>Settings</a></li>
+            <li><a href="#" onclick="signOut()"><i class="lni-power-switch"></i>Sign Out</a></li>
+        </ul>
+        <!-- Go Back Button-->
+        <div class="go-home-btn" id="goHomeBtn"><i class="lni-arrow-left"></i></div>
+    </div>
+    <div class="page-content-wrapper">
+        <!-- Product Slides-->
+        <div class="product-uploaded-images container">
+            <div class="row">
+                <!-- Single Top Product Card-->
+                <div class="col-6 col-sm-3 col-lg-3">
+                    <div class="card top-product-card mb-3">
+                        <div class="card-body">
+                            <img class="mb-2" src="../../assets/img/product/11.jpg" alt="">
+                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Top Product Card-->
+                <div class="col-6 col-sm-3 col-lg-3">
+                    <div class="card top-product-card mb-3">
+                        <div class="card-body">
+                            <img class="mb-2" src="../../assets/img/product/5.jpg" alt="">
+                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Top Product Card-->
+                <div class="col-6 col-sm-3 col-lg-3">
+                    <div class="card top-product-card mb-3">
+                        <div class="card-body">
+                            <img class="mb-2" src="../../assets/img/product/6.jpg" alt="">
+                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Top Product Card-->
+                <div class="col-6 col-sm-3 col-lg-3">
+                    <div class="card top-product-card mb-3">
+                        <div class="card-body">
+                            <img class="mb-2" src="../../assets/img/product/9.jpg" alt="">
+                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-2">
+                    <b>Uploaded Images</b>
+                </div>
+                <div class="col-6 mb-2 text-right">
+                    <button class="btn btn-sm btn-warning"><i class="lni-plus"> </i>Add Image</button>
+                </div>
+            </div>
+        </div>
+        <div class="product-form container pb-3">
+
+            <div class="card mb-3">
+                <form>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="productDetail-tab" data-toggle="tab" href="#productDetail" role="tab" aria-controls="productDetail" aria-selected="true">Product Detail</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="attributes-tab" data-toggle="tab" href="#attributes" role="tab" aria-controls="attributes" aria-selected="false">Attributes</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="productDetail" role="tabpanel" aria-labelledby="productDetail-tab">
+                                <div class="form-group row">
+                                    <label for="pName" class="col-sm-3 col-form-label">Product Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pName" placeholder="Enter Product Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pDescription" class="col-sm-3 col-form-label">Product Description</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control" rows="4" id="pDescription" placeholder="Enter Product Description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pMetaTag" class="col-sm-3 col-form-label">Meta Tag Title</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pMetaTag" placeholder="Enter Meta Tag Title">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pTag" class="col-sm-3 col-form-label">Product Tags</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pTag" placeholder="Enter Product Tags">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pCategory" class="col-sm-3 col-form-label">Category</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="pCategory"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pTag" class="col-sm-3 col-form-label" title="Stock Keeping Unit" data-title="Stock Keeping Unit">SKU</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pSKU" placeholder="Enter Stock Keeping Unit">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pCode" class="col-sm-3 col-form-label" title="Product Code" data-title="Product Code">Product Code</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pCode" placeholder="Enter Product Code">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pLocation" class="col-sm-3 col-form-label" title="Location" data-title="Location">Location</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pLocation" placeholder="Enter Location">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pPrice" class="col-sm-3 col-form-label" title="Price" data-title="Price">Price</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pPrice" placeholder="Enter Selling Price">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pTaxType" class="col-sm-3 col-form-label" title="Tax Type" data-title="Tax Type">Tax Type</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="pTaxType"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pQuantity" class="col-sm-3 col-form-label" title="Quantity" data-title="Quantity">Quantity</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="pQuantity" placeholder="Enter Quantity">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pUOM" class="col-sm-3 col-form-label" title="Unit Of Measurment" data-title="Unit Of Measurment">Unit Of Measurment</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="pUOM"></select>
+                                    </div>
+                                </div>
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <legend class="col-form-label col-sm-3 pt-0">Status</legend>
+                                        <div class="col-sm-8">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="pStatus" id="eStatus" value="Y" checked>
+                                                <label class="form-check-label" for="eStatus">Enable</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="pStatus" id="dStatus" value="N">
+                                                <label class="form-check-label" for="dStatus">Disable</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">Availability</div>
+                                    <div class="col-sm-8">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pAvailable" checked>
+                                            <label class="form-check-label" for="pAvailable">Available To Sell</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="attributes" role="tabpanel" aria-labelledby="attributes-tab">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Add Product Attributes</h6>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <button class="btn btn-sm btn-primary">View Example Attributes</button>
+                                    </div>
+                                    <div class="col">
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="attribute-sections">
+                                    <div class="attribute-section mt-2 mb-3">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Attribute Name</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control form-control-sm" placeholder="Attribute Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Attribute Value</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control form-control-sm" placeholder="Attribute Value">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2"></label>
+                                            <div class="col-sm-10">
+                                                <a class="btn btn-danger delete-row-btn" href="#"><i class="lni-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" id="add-attribute-row"><i class="lni-plus"></i> Add Attribute</button>
+
+                                <table class="table mt-3 attribute-table d-none">
+                                    <thead>
+                                        <tr>
+                                            <th>Attribute Name</th>
+                                            <th>Attribute Value</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control" placeholder="Enter Name"></td>
+                                            <td><input type="text" class="form-control" placeholder="Enter Value"></td>
+                                            <td><a class="btn btn-danger mr-2 delete-row-btn" href="#"><i class="lni-trash"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="3" class="text-right">
+                                                <button type="button" class="btn btn-sm btn-primary" id="add-attribute-row"><i class="lni-plus"></i> Add Attribute</button>
+                                            </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Nav-->
+    <div class="footer-nav-area" id="footerNav">
+        <div class="container h-100 px-0">
+            <div class="suha-footer-nav h-100">
+                <ul class="h-100 d-flex align-items-center justify-content-between">
+                    <li><a href="../dashboard/dashboard.html"><i class="lni-home"></i>Dashboard</a></li>
+                    <li><a href="../product/shop-grid.html"><i class="lni-layers"></i>Products</a></li>
+                    <li><a href="../orders/my-order.html"><i class="lni-cart"></i>Orders</a></li>
+                    <li><a href="../settings/settings.html"><i class="lni-cog"></i>Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- All JavaScript Files-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/waypoints.min.js"></script>
+    <script src="../../assets/js/jquery.easing.min.js"></script>
+    <script src="../../assets/js/owl.carousel.min.js"></script>
+    <script src="../../assets/js/jquery.animatedheadline.min.js"></script>
+    <script src="../../assets/js/jquery.counterup.min.js"></script>
+    <script src="../../assets/js/wow.min.js"></script>
+    <script src="../../assets/js/jarallax.min.js"></script>
+    <script src="../../assets/js/jarallax-video.min.js"></script>
+    <script src="../../assets/js/default/jquery.passwordstrength.js"></script>
+    <script src="../../assets/js/default/dark-mode-switch.js"></script>
+    <script src="../../assets/js/default/active.js"></script>
+    <script>
+        $('#add-attribute-row').click(function() {
+            $('.attribute-sections').append('<div class="attribute-section mt-2 mb-3">' +
+                '<div class="form-group row">' +
+                '<label class="col-sm-2 col-form-label">Attribute Name</label>' +
+                '<div class="col-sm-10">' +
+                '<input type="text" class="form-control form-control-sm" placeholder="Attribute Name">' +
+                '</div>' +
+                '</div>' +
+                '<div class="form-group row">' +
+                '<label class="col-sm-2 col-form-label">Attribute Value</label>' +
+                '<div class="col-sm-10">' +
+                '<input type="text" class="form-control form-control-sm" placeholder="Attribute Value">' +
+                '</div>' +
+                '</div>' +
+                '<div class="form-group row">' +
+                '<label class="col-sm-2"></label>' +
+                '<div class="col-sm-10">' +
+                '<a class="btn btn-danger delete-row-btn" href="#"><i class="lni-trash"></i></a>' +
+                '</div>' +
+                '</div>' +
+                '</div>')
+        });
+
+        $(document).on('click', '.delete-row-btn', function() {
+            $(this).closest('.attribute-section').remove();
+        });
+    </script>
+</body>
+
+</html>
