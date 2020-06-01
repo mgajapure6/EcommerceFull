@@ -64,36 +64,44 @@
                 <!-- Single Top Product Card-->
                 <div class="col-6 col-sm-3 col-lg-3">
                     <div class="card top-product-card mb-3">
-                        <div class="card-body">
-                            <img class="mb-2" src="../../assets/img/product/11.jpg" alt="">
-                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        <div class="card-body no-image product-img-card">
+                            <img class="mb-2" id="prodcut-img-1" src="../../assets/img/core-img/noImage.jpg" alt="">
+                            <a class="btn btn-danger btn-sm delete-image-btn" href="#"><i class="lni-trash"></i></a>
+                            <a class="btn btn-warning btn-sm add-image-btn" href="#"><i class="lni-upload"></i></a>
+                            <input class="form-control-file" type="file" id="product-img-input-1">
                         </div>
                     </div>
                 </div>
                 <!-- Single Top Product Card-->
                 <div class="col-6 col-sm-3 col-lg-3">
                     <div class="card top-product-card mb-3">
-                        <div class="card-body">
-                            <img class="mb-2" src="../../assets/img/product/5.jpg" alt="">
-                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        <div class="card-body no-image product-img-card">
+                            <img class="mb-2" id="prodcut-img-2" src="../../assets/img/core-img/noImage.jpg" alt="">
+                            <a class="btn btn-danger btn-sm delete-image-btn" href="#"><i class="lni-trash"></i></a>
+                            <a class="btn btn-warning btn-sm add-image-btn" href="#"><i class="lni-upload"></i></a>
+                            <input class="form-control-file" type="file" id="product-img-input-2">
                         </div>
                     </div>
                 </div>
                 <!-- Single Top Product Card-->
                 <div class="col-6 col-sm-3 col-lg-3">
                     <div class="card top-product-card mb-3">
-                        <div class="card-body">
-                            <img class="mb-2" src="../../assets/img/product/6.jpg" alt="">
-                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        <div class="card-body no-image product-img-card">
+                            <img class="mb-2" id="prodcut-img-3" src="../../assets/img/core-img/noImage.jpg" alt="">
+                            <a class="btn btn-danger btn-sm delete-image-btn" href="#"><i class="lni-trash"></i></a>
+                            <a class="btn btn-warning btn-sm add-image-btn" href="#"><i class="lni-upload"></i></a>
+                            <input class="form-control-file" type="file" id="product-img-input-3">
                         </div>
                     </div>
                 </div>
                 <!-- Single Top Product Card-->
                 <div class="col-6 col-sm-3 col-lg-3">
                     <div class="card top-product-card mb-3">
-                        <div class="card-body">
-                            <img class="mb-2" src="../../assets/img/product/9.jpg" alt="">
-                            <a class="btn btn-danger btn-sm" href="#"><i class="lni-trash"></i></a>
+                        <div class="card-body no-image product-img-card">
+                            <img class="mb-2" id="prodcut-img-4" src="../../assets/img/core-img/noImage.jpg" alt="">
+                            <a class="btn btn-danger btn-sm delete-image-btn" href="#"><i class="lni-trash"></i></a>
+                            <a class="btn btn-warning btn-sm add-image-btn" href="#"><i class="lni-upload"></i></a>
+                            <input class="form-control-file" type="file" id="product-img-input-4">
                         </div>
                     </div>
                 </div>
@@ -103,7 +111,10 @@
                     <b>Uploaded Images</b>
                 </div>
                 <div class="col-6 mb-2 text-right">
-                    <button class="btn btn-sm btn-warning"><i class="lni-plus"> </i>Add Image</button>
+                    <div class="product-img-input-div">
+                        <input class="form-control-file" type="file" id="product-img-input">
+                        <button class="btn btn-sm btn-warning upload-product-img-btn"><i class="lni-plus"> </i>Add Image</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -340,6 +351,65 @@
         $(document).on('click', '.delete-row-btn', function() {
             $(this).closest('.attribute-section').remove();
         });
+
+        $('.product-img-input').click(function(){
+            if($('.no-image').length==0){
+                alert('You can upload only 4 images');
+            }
+        });
+
+        $('.product-img-card .form-control-file').on('change',function(evt){
+            console.log('evt',evt);
+            var tgt = evt.target,files = tgt.files;
+            if (FileReader && files && files.length) {
+                if (validateSize(files[0])) {
+                    var fr = new FileReader();
+                    fr.onload = function() {
+                        $(this).closest('.no-image').find('img').attr('src',fr.result);
+                        $(this).closest('.no-image').removeClass('no-image');
+                    }
+                    fr.readAsDataURL(files[0]);
+                }
+            }
+        });
+
+        document.getElementById('product-img-input').onchange = function(evt) {
+            console.log('evt',evt);
+            var tgt = evt.target || window.event.srcElement,files = tgt.files;
+            if (FileReader && files && files.length) {
+                if (validateSize(files[0])) {
+                    var fr = new FileReader();
+                    fr.onload = function() {
+                        $('.no-image:first').find('img').attr('src',fr.result);
+                        $('.no-image:first').removeClass('no-image');
+                        if($('.no-image').length==0){
+                            alert('You can upload only 4 images');
+                        }
+                        //document.getElementById('profile-img').src = fr.result;
+                        //document.getElementById('profile-img').setAttribute("file-type", (files[0].type).substring((files[0].type).indexOf('/') + 1, (files[0].type).length));
+                    }
+                    fr.readAsDataURL(files[0]);
+                }
+            } else {
+            }
+        }
+
+        function validateSize(file) {
+            var isValidSize = false;
+            var FileSize = file.size / 1024; // in KB
+            if (FileSize > 500) {
+                alert('File size exceeds 500 KB');
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        $('.delete-image-btn').click(function(){
+            $(this).closest('.card-body').find('img').attr('src','../../assets/img/core-img/noImage.jpg');
+            $(this).closest('.card-body').addClass('no-image');
+        });
+
     </script>
 </body>
 

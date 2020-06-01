@@ -166,23 +166,17 @@
         });
 
         document.getElementById('profile-img-input').onchange = function(evt) {
-            var tgt = evt.target || window.event.srcElement,
-                files = tgt.files;
-
-            // FileReader support
+            var tgt = evt.target || window.event.srcElement,files = tgt.files;
             if (FileReader && files && files.length) {
                 if (validateSize(files[0])) {
                     var fr = new FileReader();
                     fr.onload = function() {
                         document.getElementById('profile-img').src = fr.result;
-                        console.log('file', files[0])
                         document.getElementById('profile-img').setAttribute("file-type", (files[0].type).substring((files[0].type).indexOf('/') + 1, (files[0].type).length));
                     }
                     fr.readAsDataURL(files[0]);
                 }
             } else {
-                // fallback -- perhaps submit the input to an iframe and temporarily store
-                // them on the server until the user's session ends.
             }
         }
 
