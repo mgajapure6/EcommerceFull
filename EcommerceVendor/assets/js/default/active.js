@@ -10,7 +10,7 @@
     // :: 1.0 Preloader
     suhaWindow.on('load', function () {
         $('#preloader').fadeOut('1000', function () {
-            $(this).remove();
+            //$(this).hide();
         });
     });
 

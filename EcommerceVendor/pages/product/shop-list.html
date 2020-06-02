@@ -81,7 +81,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row products-row">
                     <!-- Single Weekly Product Card-->
                     <div class="col-12 col-md-6">
                         <div class="card weekly-product-card mb-3">
@@ -282,6 +282,22 @@
     <script src="../../assets/js/default/jquery.passwordstrength.js"></script>
     <script src="../../assets/js/default/dark-mode-switch.js"></script>
     <script src="../../assets/js/default/active.js"></script>
+
+    <!-- Import and configure the Firebase SDK -->
+    <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+    <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-performance.js"></script>
+    <script src="../../assets/firebase/init.js"></script>
+    <script src="../../assets/firebase/app.db.js"></script>
+    <script src="shop.db.js"></script>
+    <script>
+        fetchListProducts();
+    </script>
 </body>
 
 </html>
